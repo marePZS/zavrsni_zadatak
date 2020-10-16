@@ -1,4 +1,5 @@
 <?php include 'connection.php';?>
+<?php include 'create-comment.php'?>
 
 <html lang="en">
     <?php include 'head.php';?>
@@ -36,6 +37,18 @@
                         <?php echo($singlePost['body'])?>
                         </p>    
                     </div><!-- /.blog-post -->
+                    <div class="comment-form">
+                        <form action="single-post.php?post_id=<?php echo $_GET['post_id']; ?>" id="create-comment" method="POST">
+
+                            <label>Author</label></br>
+                            <input name="author" id="author" placeholder="Author name" required></input></br>
+                            <label>Add comment</label></br>
+                            <textarea name="text" id="text" rows="5" cols="40" placeholder="Add your comment" required></textarea></br>
+                            <input type="hidden" value="<?php echo $_GET['post_id']; ?>" name="post_id"></input>
+                            <input  class="btn btn-default" type="submit" name="submit" value="Submit">
+                        </form>
+
+                    </div>
 
                     <div class="comments">
                         <h4>Comments</h4>
