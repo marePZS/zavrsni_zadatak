@@ -70,6 +70,12 @@
                         <?php echo($singlePost['body'])?>
                         </p>    
                     </div><!-- /.blog-post -->
+                    
+                    <div class="comments">
+                        <h4>Comments</h4>
+                        <?php include 'comments.php'?>
+
+                    </div>
 
 
                 </div><!-- /.blog-main -->
